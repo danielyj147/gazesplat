@@ -5,11 +5,11 @@
 Upload a selfie. Get an interactive 3D Gaussian Splatting portrait where the subject's eyes follow your cursor in real time.
 
 <p align="center">
-  <img src="docs/input.jpg" alt="Input selfie" width="280" />
+  <img src="docs/input.jpg" alt="Input selfie" height="320" />
   &nbsp;&nbsp;&rarr;&nbsp;&nbsp;
-  <img src="docs/splatted.png" alt="3D Gaussian Splat output" width="280" />
+  <img src="docs/splatted.png" alt="3D Gaussian Splat output" height="320" />
 </p>
-<p align="center"><em>A single photo becomes an interactive 3D portrait with gaze tracking, blinks, and micro-expressions.</em></p>
+<p align="center"><em>A single photo becomes an interactive 3D portrait with gaze tracking and micro-expressions.</em></p>
 
 > Sample photo by [Joseph Gonzalez](https://unsplash.com/@itsjosephgonzalez) on [Unsplash](https://unsplash.com).
 
