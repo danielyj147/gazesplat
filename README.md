@@ -13,6 +13,8 @@ Upload a selfie. Get an interactive 3D Gaussian Splatting portrait where the sub
 
 > Sample photo by [Joseph Gonzalez](https://unsplash.com/@itsjosephgonzalez) on [Unsplash](https://unsplash.com).
 
+**Try it live:** [gazesplat.danielyj.com](https://gazesplat.danielyj.com)
+
 ---
 
 ## Quick Start
