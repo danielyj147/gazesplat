@@ -244,6 +244,17 @@ export function ImageUpload({ onImageSelected }: ImageUploadProps) {
           or paste from clipboard (Ctrl+V)
         </span>
       </div>
+
+      <div className="mt-12 max-w-sm w-full text-center">
+        <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">
+          Example output
+        </p>
+        <img
+          src="/sample-preview.png"
+          alt="Example 3D Gaussian splat portrait"
+          className="w-full rounded-xl border border-gray-700/50 shadow-lg"
+        />
+      </div>
     </div>
   );
 }

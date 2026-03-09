@@ -5,9 +5,7 @@ import { ProcessingView } from './components/ProcessingView';
 import { ViewerCanvas } from './components/ViewerCanvas';
 import { ErrorView } from './components/ErrorView';
 import { processImage } from './pipeline/processingPipeline';
-import { loadImage, loadImageFromUrl } from './utils/imageUtils';
-
-const SAMPLE_IMAGE_URL = '/sample.jpg';
+import { loadImage } from './utils/imageUtils';
 
 export default function App() {
   const [state, setState] = useState<AppState>({ stage: 'upload' });
@@ -15,7 +13,6 @@ export default function App() {
   const [fadeIn, setFadeIn] = useState(false);
   const [isDemo, setIsDemo] = useState(false);
   const abortRef = useRef(false);
-  const demoAttempted = useRef(false);
 
   // Trigger fade-in on mount and state changes
   useEffect(() => {
@@ -23,29 +20,6 @@ export default function App() {
     const raf = requestAnimationFrame(() => setFadeIn(true));
     return () => cancelAnimationFrame(raf);
   }, [state.stage]);
-
-  // On mount, try to load the default sample image
-  useEffect(() => {
-    if (demoAttempted.current) return;
-    demoAttempted.current = true;
-
-    (async () => {
-      try {
-        const img = await loadImageFromUrl(SAMPLE_IMAGE_URL);
-        // Sample image exists — process it as the demo
-        setIsDemo(true);
-        setState({ stage: 'processing', step: 'detecting-face', progress: 0 });
-
-        const cloud = await processImage(img, (step: ProcessingStep, progress: number) => {
-          setState({ stage: 'processing', step, progress });
-        });
-
-        setState({ stage: 'viewing', cloud });
-      } catch {
-        // No sample image — just show the upload screen
-      }
-    })();
-  }, []);
 
   const processFile = useCallback(async (file: File) => {
     abortRef.current = false;

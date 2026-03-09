@@ -282,6 +282,16 @@ Given more time, these are the extensions I would prioritize:
 
 ---
 
+## Deployment
+
+**Live:** https://gazesplat.danielyj.com
+
+Pushes to `main` auto-deploy via GitHub Actions. The CI pipeline builds the Vite app, rsync's the static output to an EC2 instance, and traffic is served through a Cloudflare Tunnel with HTTPS termination.
+
+See `.github/workflows/deploy.yml` for the CI/CD pipeline.
+
+---
+
 ## Development
 
 ```bash
