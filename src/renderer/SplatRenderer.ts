@@ -234,7 +234,7 @@ export class SplatRenderer {
   applyGazeOffset(
     leftOffset: [number, number, number],
     rightOffset: [number, number, number],
-    blinkFactor: number = 1.0,
+    _blinkFactor: number = 1.0,
     headDrift: { dx: number; dy: number; dz: number } = { dx: 0, dy: 0, dz: 0 }
   ): void {
     const { eyeIndices } = this.cloud;
